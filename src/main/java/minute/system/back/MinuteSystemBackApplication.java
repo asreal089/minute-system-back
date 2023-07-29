@@ -1,4 +1,4 @@
-package minute.system.back.minutesystemback;
+package minute.system.back;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
