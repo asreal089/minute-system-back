@@ -1,4 +1,4 @@
-package minute.system.back.model;
+package minute.system.back.model.entity;
 
 import lombok.Data;
 
