@@ -1,7 +1,7 @@
 package minute.system.back.service;
 
-import minute.system.back.model.dto.Vote.VoteResponseDTO;
-import minute.system.back.model.dto.Vote.VoteRquestDTO;
+import minute.system.back.model.dto.vote.VoteResponseDTO;
+import minute.system.back.model.dto.vote.VoteRquestDTO;
 
 public interface VoteService {
     

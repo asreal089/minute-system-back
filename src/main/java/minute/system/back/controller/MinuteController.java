@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
 import minute.system.back.model.dto.ApiResponseDTO;
-import minute.system.back.model.dto.Minute.MinuteRequestDTO;
-import minute.system.back.model.dto.Minute.MinuteResponseDTO;
+import minute.system.back.model.dto.minute.MinuteRequestDTO;
+import minute.system.back.model.dto.minute.MinuteResponseDTO;
 import minute.system.back.service.impl.MinuteServiceImpl;
 
 
@@ -21,7 +22,7 @@ public class MinuteController {
     private MinuteServiceImpl minuteService;
     
     @PostMapping("/")
-    public ResponseEntity<ApiResponseDTO<MinuteResponseDTO>> createMinute(@RequestBody MinuteRequestDTO minuteRequestDTO) {
+    public ResponseEntity<ApiResponseDTO<MinuteResponseDTO>> createMinute(@RequestBody @Valid MinuteRequestDTO minuteRequestDTO) {
 
         MinuteResponseDTO response =  minuteService.create(minuteRequestDTO);
         

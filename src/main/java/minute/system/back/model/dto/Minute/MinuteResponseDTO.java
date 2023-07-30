@@ -1,4 +1,4 @@
-package minute.system.back.model.dto.Minute;
+package minute.system.back.model.dto.minute;
 
 import lombok.Builder;
 import lombok.Data;

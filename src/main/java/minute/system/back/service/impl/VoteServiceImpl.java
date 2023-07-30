@@ -1,7 +1,7 @@
 package minute.system.back.service.impl;
 
-import minute.system.back.model.dto.Vote.VoteResponseDTO;
-import minute.system.back.model.dto.Vote.VoteRquestDTO;
+import minute.system.back.model.dto.vote.VoteResponseDTO;
+import minute.system.back.model.dto.vote.VoteRquestDTO;
 import minute.system.back.service.VoteService;
 
 public class VoteServiceImpl implements VoteService{

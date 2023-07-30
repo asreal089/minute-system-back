@@ -1,4 +1,4 @@
-package minute.system.back.model.dto.Vote;
+package minute.system.back.model.dto.vote;
 
 public class VoteRquestDTO {
     

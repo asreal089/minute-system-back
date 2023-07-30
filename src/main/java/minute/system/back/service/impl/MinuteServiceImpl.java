@@ -5,9 +5,9 @@ import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import minute.system.back.model.dto.Minute.MinuteRequestDTO;
-import minute.system.back.model.dto.Minute.MinuteResponseDTO;
-import minute.system.back.model.dto.Minute.ResultResponseDTO;
+import minute.system.back.model.dto.minute.MinuteRequestDTO;
+import minute.system.back.model.dto.minute.MinuteResponseDTO;
+import minute.system.back.model.dto.minute.ResultResponseDTO;
 import minute.system.back.model.entity.Minute;
 import minute.system.back.repository.MinuteRepository;
 import minute.system.back.service.MinuteService;
