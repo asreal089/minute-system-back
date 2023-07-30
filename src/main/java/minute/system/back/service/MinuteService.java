@@ -8,6 +8,8 @@ public interface MinuteService {
 
     public MinuteResponseDTO create(MinuteRequestDTO minuteRequestDTO);
 
-    public ResultResponseDTO getResult(Integer qtd);
+    public MinuteResponseDTO get(Long id);
+
+    public ResultResponseDTO getResult(Long id);
     
 }

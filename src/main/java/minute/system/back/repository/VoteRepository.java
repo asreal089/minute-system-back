@@ -7,4 +7,5 @@ import minute.system.back.model.entity.Vote;
 
 public interface VoteRepository extends Repository<Vote, Long>{
 
+    Vote save(Vote vote);
 }

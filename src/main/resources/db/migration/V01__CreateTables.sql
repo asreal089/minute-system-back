@@ -12,6 +12,7 @@ CREATE TABLE TBvotes (
     id_minute BIGINT NOT NULL,
     created_at TIMESTAMP NOT NULL,
     user_id BIGINT NOT NULL,
+    vote BOOLEAN NOT NULL,
     FOREIGN KEY (id_minute) REFERENCES TBminute (id),
     CONSTRAINT unique_vote UNIQUE (id_minute, user_id)
 );

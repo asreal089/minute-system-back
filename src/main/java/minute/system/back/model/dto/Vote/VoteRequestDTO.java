@@ -10,5 +10,8 @@ public class VoteRequestDTO {
 
     @NotNull(message = "vote is required")
     private Boolean vote;
+
+    @NotNull(message = "UserId is required")
+    private Long userId;
     
 }

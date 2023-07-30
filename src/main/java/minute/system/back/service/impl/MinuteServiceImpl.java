@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import minute.system.back.model.dto.error.exception.ApiNotFoundException;
 import minute.system.back.model.dto.minute.MinuteRequestDTO;
 import minute.system.back.model.dto.minute.MinuteResponseDTO;
 import minute.system.back.model.dto.minute.ResultResponseDTO;
@@ -42,9 +43,25 @@ public class MinuteServiceImpl implements MinuteService {
     }
 
     @Override
-    public ResultResponseDTO getResult(Integer qtd) {
+    public MinuteResponseDTO get(Long id) {
+        try {
+            Minute savedMinute = repository.findById(id);
+            return MinuteResponseDTO.builder()
+                    .id(savedMinute.getId())
+                    .description(savedMinute.getDescription())
+                    .createdAt(savedMinute.getCreatedAt().toString())
+                    .endAt(savedMinute.getEndAt().toString())
+                    .build();
+        } catch (Exception e) {
+            throw new ApiNotFoundException("Minute not found", e.getCause());
+        }
+    }
+
+    @Override
+    public ResultResponseDTO getResult(Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getResult'");
     }
+
 
 }

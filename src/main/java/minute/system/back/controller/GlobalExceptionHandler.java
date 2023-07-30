@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import minute.system.back.model.dto.ApiResponseDTO;
 import minute.system.back.model.dto.error.ApiError;
-import minute.system.back.model.dto.error.ApiException;
+import minute.system.back.model.dto.error.exception.ApiBadRequestException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -21,8 +21,8 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponseDTO<>(null, List.of(error)));
     }
 
-    @ExceptionHandler(ApiException.class)
-    public ResponseEntity<ApiResponseDTO<Void>> handleGenericException(ApiException ex) {
+    @ExceptionHandler(ApiBadRequestException.class)
+    public ResponseEntity<ApiResponseDTO<Void>> handleGenericException(ApiBadRequestException ex) {
         ApiError error = new ApiError("Bad Request", ex.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponseDTO<>(null, List.of(error)));
     }

@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 import minute.system.back.model.dto.ApiResponseDTO;
-import minute.system.back.model.dto.minute.MinuteRequestDTO;
-import minute.system.back.model.dto.minute.MinuteResponseDTO;
 import minute.system.back.model.dto.vote.VoteRequestDTO;
 import minute.system.back.model.dto.vote.VoteResponseDTO;
 import minute.system.back.service.impl.VoteServiceImpl;
