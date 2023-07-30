@@ -22,22 +22,23 @@ public class MinuteServiceImpl implements MinuteService {
     public MinuteResponseDTO create(MinuteRequestDTO minuteRequestDTO) {
 
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime endAt = now.plusMinutes(1);
-        
+        LocalDateTime endAt = now
+                .plusMinutes(minuteRequestDTO.getDuration() == null ? 1 : minuteRequestDTO.getDuration());
+
         Minute minute = Minute.builder()
-            .description(minuteRequestDTO.getDescription())
-            .createdAt(now)
-            .endAt(endAt)
-            .build();
+                .description(minuteRequestDTO.getDescription())
+                .createdAt(now)
+                .endAt(endAt)
+                .build();
 
         Minute savedMinute = repository.save(minute);
 
         return MinuteResponseDTO.builder()
-            .id(savedMinute.getId())
-            .description(savedMinute.getDescription())
-            .createdAt(savedMinute.getCreatedAt().toString())
-            .endAt(savedMinute.getEndAt().toString())
-            .build();
+                .id(savedMinute.getId())
+                .description(savedMinute.getDescription())
+                .createdAt(savedMinute.getCreatedAt().toString())
+                .endAt(savedMinute.getEndAt().toString())
+                .build();
     }
 
     @Override
@@ -45,5 +46,5 @@ public class MinuteServiceImpl implements MinuteService {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getResult'");
     }
-    
+
 }

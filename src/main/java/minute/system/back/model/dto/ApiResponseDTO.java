@@ -3,6 +3,8 @@ package minute.system.back.model.dto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import minute.system.back.model.dto.error.ApiError;
+
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

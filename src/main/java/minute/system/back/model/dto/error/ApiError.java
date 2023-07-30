@@ -1,4 +1,4 @@
-package minute.system.back.model.dto;
+package minute.system.back.model.dto.error;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

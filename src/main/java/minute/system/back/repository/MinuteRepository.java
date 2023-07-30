@@ -7,5 +7,7 @@ import minute.system.back.model.entity.Minute;
 public interface MinuteRepository extends Repository<Minute, Long>{
 
     public Minute save(Minute minute);
+
+    public Minute findById(Long id);
     
 }
