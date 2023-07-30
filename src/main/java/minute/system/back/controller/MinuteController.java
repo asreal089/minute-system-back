@@ -13,6 +13,7 @@ import jakarta.validation.Valid;
 import minute.system.back.model.dto.ApiResponseDTO;
 import minute.system.back.model.dto.minute.MinuteRequestDTO;
 import minute.system.back.model.dto.minute.MinuteResponseDTO;
+import minute.system.back.model.dto.minute.ResultResponseDTO;
 import minute.system.back.service.impl.MinuteServiceImpl;
 
 
@@ -39,5 +40,12 @@ public class MinuteController {
         return ResponseEntity.ok(new ApiResponseDTO<MinuteResponseDTO>(response, null));
     }
 
+    @GetMapping("/{id}/result")
+    public ResponseEntity<ApiResponseDTO<ResultResponseDTO>> getMinuteResults(@PathVariable("id") Long id) {
+
+        ResultResponseDTO response =  minuteService.getResult(id);
+        
+        return ResponseEntity.ok(new ApiResponseDTO<ResultResponseDTO>(response, null));
+    }
     
 }

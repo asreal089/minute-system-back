@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/v1/vote")
+@RequestMapping("/v1/minute")
 public class VoteController {
 
     @Autowired
     private VoteServiceImpl voteServiceImpl;
 
-    @PostMapping("/{idMinute}")
+    @PostMapping("/{idMinute}/vote")
     public ResponseEntity<ApiResponseDTO<VoteResponseDTO>> postMethodName(@PathVariable("idMinute") Long idMinute, @RequestBody @Valid VoteRequestDTO request) {
         VoteResponseDTO response = voteServiceImpl.vote(request, idMinute);
         return ResponseEntity.ok(new ApiResponseDTO<VoteResponseDTO>(response, null));

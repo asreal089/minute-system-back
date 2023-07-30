@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import minute.system.back.model.dto.error.exception.ApiBackEndException;
 import minute.system.back.model.dto.error.exception.ApiBadRequestException;
 import minute.system.back.model.dto.vote.VoteRequestDTO;
 import minute.system.back.model.dto.vote.VoteResponseDTO;
@@ -55,7 +56,7 @@ public class VoteServiceImpl implements VoteService {
         } catch (DataIntegrityViolationException e) {
             throw new ApiBadRequestException("User already voted");
         } catch (Exception e){
-            throw new ApiBadRequestException("Error while saving vote: {}" + e.getMessage());
+            throw new ApiBackEndException("Error while saving vote: {}" + e.getMessage());
         }
 
     }
