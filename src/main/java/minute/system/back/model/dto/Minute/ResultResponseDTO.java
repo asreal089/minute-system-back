@@ -6,5 +6,5 @@ import lombok.Data;
 @Data
 @Builder
 public class ResultResponseDTO {
-    private Integer result;
+    private Integer qtd;
 }

@@ -1,5 +1,6 @@
 package minute.system.back.model.entity;
 
+import lombok.Builder;
 import lombok.Data;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
@@ -7,6 +8,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "TBminute")
+@Builder
 public class Minute {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
