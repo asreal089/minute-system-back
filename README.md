@@ -24,6 +24,6 @@ There a few endpoints implemented in this API:
 
 * Use the endpoint `api/v1/minute` end to create a minute, also that would a time frame for voting, the default value is 1 minute, but it can be set by adding the field `duration`.
 
-* Vote using the endpoint `api/v1/minute/{idMinute}/vote` while the "the session" is still available.
+* Vote using the endpoint `api/v1/minute/{idMinute}/vote` while the "session" is still available.
 
 * Get result in the endpoint `api/v1/minute/{idMinute}/result`
